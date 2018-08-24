@@ -1,5 +1,14 @@
+// Import Backbone and its dependencies
 var Backbone = require('backbone');
 
+// Import our router
+var AppRouter = require('./app.router');
+
+// Execute after the DOM has loaded
 Backbone.$(function () {
-  console.log('Ready'); 
+  // Create the router
+  new AppRouter();
+  
+  // Start listening for route changes
+  Backbone.history.start();
 });
